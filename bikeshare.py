@@ -16,17 +16,14 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input("Would you like to analyze data for chicago, new york city, or washington?: ").lower()
     while city not in ['chicago', 'new york city', 'washington']:
         city = input("That's not a valid entry. Please select chicago, new york city, or washington: ")
 
-    # TO DO: get user input for month (all, january, february, ... , june)
     month = input("Please choose a month from january to june or all if you don't want to filter by month: ").lower()
     while month not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
         month = input("That's not a valid entry. Please select January, February, March, April, May, June, or all: ")
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Please enter a day of the week (e.g. monday) or all: ").lower()
     while day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
         day = input("That's not a valid entry. Please select monday, tuesday, wednesday, thursday, friday, saturday, sunday, or all: ")
@@ -151,7 +148,7 @@ def user_stats(df):
         gender_types = df['Gender'].value_counts()
         print('Gender Types: ', gender_types)
     else:
-        print("Sorry, Washington does not have gender data") 
+        print("Sorry, Washington does not have gender data")
 
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
@@ -169,7 +166,7 @@ def user_stats(df):
 
 def data_preview(df):
     """Gives the option to view the dataset 5 rows at a time"""
-    
+
     preview_select = input("Would you like to view 5 rows of this data set? (Y/N): ").lower()
     if preview_select in ('y', 'yes'):
         i = 0
