@@ -29,7 +29,7 @@ def get_filters():
         day = input("That's not a valid entry. Please select monday, tuesday, wednesday, thursday, friday, saturday, sunday, or all: ")
 
     print('-'*40)
-    return city.lower(), month.lower(), day
+    return city, month, day
 
 
 def load_data(city, month, day):
